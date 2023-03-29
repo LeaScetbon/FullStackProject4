@@ -1,25 +1,44 @@
-import logo from './logo.svg';
 import './App.css';
+import { SketchPicker, BlockPicker } from "react-color";
+import { useState } from "react";
+import Keyboard from './keyboard';
 
 function App() {
+  //creating state to store our color and also set color using onChange event for sketch picker
+  const [sketchPickerColor, setSketchPickerColor] = useState({
+    r: "0",
+    g: "0",
+    b: "0",
+    a: "100",
+  });
+  // destructuring rgba from state
+  const { r, g, b, a } = sketchPickerColor;
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div id="App" className="App" style={{ display: "flex", justifyContent: "space-around" }}>
+      <div className="sketchpicker">
+        <h6>Sketch Picker</h6>
+        {/* Div to display the color  */}
+        <div style={{
+            backgroundColor: `rgba(${r},${g},${b},${a})`,
+            width: 100,
+            height: 50,
+            border: "2px solid white",
+          }}></div>
+          
+        {/* Sketch Picker from react-color and handling color on onChange event */}
+        <SketchPicker
+          onChange={(color) => {
+            setSketchPickerColor(color.rgb);
+          }}
+          color={sketchPickerColor}/>
+      </div>
+     <Keyboard/>
     </div>
+
   );
 }
 
 export default App;
+
+
