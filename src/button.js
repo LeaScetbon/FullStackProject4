@@ -1,18 +1,18 @@
 import React from "react";
-import PropTypes from "prop-types";
 //import "./Button.css";
-import ReactDOM from "react";
 import './App.css';
 
 function Button (props) {
-
-    
       
+   const alertName = (c) => {
+    alert(c);
+  };
 
     return (
       <div className="buttonClass">
-         <button onClick={handleClick()}>{this.props.name}</button>
-        {/*<button name="button" onClick={button_func(button.innerHTML)}>א</button>*/}
+        
+         <button style={{border: 'solid 2px black ', width:'100px', height:'50px', margin:'auto' }} onClick={alertName(props.content)}> Click me</button>
+        {}
       </div>
     );
   }
@@ -20,12 +20,13 @@ function Button (props) {
 
 //ReactDOM.render(<Button />, document.getElementById('keyboard'));
 function handleClick ()  {
-    this.props.clickHandler(this.props.name);
+    // this.props.clickHandler(this.props.name);
+    console.log('w')
   };
 
-function button_func(letter){
+/*function button_func(letter){
     let text=document.getElementById('screen').innerHTML;
     text+=letter;
     document.getElementById('screen').innerHTML=text;
-}
+}*/
 export default Button;
