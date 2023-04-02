@@ -1,28 +1,36 @@
 import React from "react";
-//import "./Button.css";
+import  ReactDOM  from "react-dom";
 import './App.css';
+import PropTypes from "prop-types";
 
-function Button (props) {
-      
-   const alertName = (c) => {
-    alert(c);
+
+export class Button extends React.Component {
+  static propTypes = {
+    content: PropTypes.string,
+    clickHandler: PropTypes.func,
   };
 
-    return (
-      <div className="buttonClass">
-        
-         <button style={{border: 'solid 2px black ', width:'100px', height:'50px', margin:'auto' }} onClick={alertName(props.content)}> Click me</button>
-        {}
-      </div>
-    );
+  
+  handleClick = () => {
+    
+    ReactDOM.render(this.props.content, document.getElementById('Screen'));
+
+    //this.props.clickHandler();
+    //window.print();
+  };
+
+
+render(){return (
+  <div className="buttonClass">
+    
+     <button style={{border: 'solid 2px black ', width:'100px', height:'50px', margin:'auto' }} onClick={this.handleClick}>{this.props.content}</button>
+    {}
+  </div>
+);}
+    
   }
 
 
-//ReactDOM.render(<Button />, document.getElementById('keyboard'));
-function handleClick ()  {
-    // this.props.clickHandler(this.props.name);
-    console.log('w')
-  };
 
 /*function button_func(letter){
     let text=document.getElementById('screen').innerHTML;

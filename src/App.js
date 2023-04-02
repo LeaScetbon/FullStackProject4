@@ -1,17 +1,27 @@
 import './App.css';
 import Keyboard from './keyboard';
-import Color from './color';
-import Button from './button';
-
-function App() {
+import React from 'react';
+import Screen from './screen';
+export class App extends React.Component {
+  state = {
+    screen : null
+  };
   
-  return (
-    <div id="App" className="App" style={{ display: "flex", justifyContent: "space-around" }}>
-     <Color/>
-     <Keyboard/>
-    </div>
+  handleClick = content => {
+    this.setState({screen: content} );
+  };
 
-  );
+  render(){
+    return (
+      <div id="App" className="App" style={{ display: "flex", justifyContent: "space-around" }}>
+       {/* <Color/> */}
+       <Keyboard/>
+       <Screen/>
+      </div>
+  
+    );
+  }
+  
 }
 
 export default App;
