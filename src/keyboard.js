@@ -7,10 +7,10 @@ export class Keyboard extends React.Component {
   static propTypes = {
     clickHandler: PropTypes.func,
   };
-
-  handleClick = content => {
+  
+/*  handleClick = content => {
     this.props.clickHandler(content);
-  };
+  };*/
 
 render()
 {return (

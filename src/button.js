@@ -3,6 +3,7 @@ import ReactDOM from "react-dom";
 import './App.css';
 import PropTypes from "prop-types";
 import Screen from "./screen";
+import  Keyboard  from "./keyboard";
 
 
 export class Button extends React.Component {
@@ -13,11 +14,9 @@ export class Button extends React.Component {
 
 
   handleClick = () => {
-
-   // ReactDOM.render(this.props.content, document.getElementById('Screen'));
-    Screen.setState({text: text+this.props.content});
+    ReactDOM.render(<p id={this.props.content}>{this.props.content}</p>, document.getElementById('Screen'));
+   // Screen.setState({text: text+this.props.content});
     //this.props.clickHandler();
-    //window.print();
   };
 
 
@@ -26,14 +25,11 @@ export class Button extends React.Component {
       <div className="buttonClass">
 
         <button style={{ border: 'solid 2px black ', width: '100px', height: '50px', margin: 'auto' }} onClick={this.handleClick}>{this.props.content}</button>
-        { }
       </div>
     );
   }
 
 }
-
-
 
 /*function button_func(letter){
     let text=document.getElementById('screen').innerHTML;
