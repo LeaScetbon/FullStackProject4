@@ -10,16 +10,22 @@ export class Button extends React.Component {
     content: PropTypes.string,
     clickHandler: PropTypes.func,
   };
-
+  constructor(props) {
+    super(props);
+    this.state = {
+      displayValue: ''
+    };
+  }
 
   handleClick = () => {
-
-   // ReactDOM.render(this.props.content, document.getElementById('Screen'));
-    Screen.setState({text: text+this.props.content});
+    this.setState(prevState => ({ displayValue: prevState.displayValue + this.props.content }));
+    ReactDOM.render(this.state.displayValue,document.getElementById('Screen'));
+    //ReactDOM.render(this.props.content, document.getElementById('Screen'));
+    //Screen.setState({text: text+this.props.content});
     //this.props.clickHandler();
-    //window.print();
+   
   };
-
+ 
 
   render() {
     return (
