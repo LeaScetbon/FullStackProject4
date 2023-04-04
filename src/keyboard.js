@@ -4,13 +4,6 @@ import './App.css';
 import Button from "./button";
 
 export class Keyboard extends React.Component {
-  // static propTypes = {
-  //   clickHandler: PropTypes.func,
-  // };
-
-  // handleClick = content => {
-  //   this.props.clickHandler(content);
-  // };
 
 render()
 {return (
