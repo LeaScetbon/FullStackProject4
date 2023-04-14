@@ -19,7 +19,10 @@ export class Button extends React.Component {
   }
 
   handleClick = () => {
-    if (this.props.content ==  'DEL'){
+    if (this.props.content === 'CLEAR' ){
+      screenContent = '';
+    }
+    else if (this.props.content ==  'DEL'){
       screenContent= screenContent.slice(0,-1);
     }
     else{
