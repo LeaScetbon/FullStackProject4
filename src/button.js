@@ -19,9 +19,16 @@ export class Button extends React.Component {
   }
 
   handleClick = () => {
+    if (this.props.content ==  'DEL'){
+      screenContent= screenContent.slice(0,-1);
+    }
+    else{
     screenContent += this.props.content;
+  }
+
     /*this.setState(prevState => ({ displayValue: prevState.displayValue + this.props.content }));*/
     ReactDOM.render(/*this.props.content*/screenContent, document.getElementById('Screen'));
+   
   };
 
   render() {
