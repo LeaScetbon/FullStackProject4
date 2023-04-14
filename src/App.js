@@ -4,24 +4,23 @@ import React from 'react';
 import Screen from './screen';
 export class App extends React.Component {
   state = {
-    screen : null
+    screen: null
   };
-  
+/*
   handleClick = content => {
-    this.setState({screen: content} );
-  };
+    this.setState({ screen: content });
+  };*/
 
-  render(){
+  render() {
     return (
       <div id="App" className="App" style={{ display: "flex", justifyContent: "space-around" }}>
-       {/* <Color/> */}
-       <Keyboard/>
-       <Screen/>
+        {/* <Color/> */}
+        <Keyboard />
+        <Screen />
       </div>
-  
     );
   }
-  
+
 }
 
 export default App;

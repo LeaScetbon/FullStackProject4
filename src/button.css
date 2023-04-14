@@ -5,3 +5,8 @@
 #B{
     margin-right: 0;
 }
+
+.buttonClass{
+    flex:1;
+    padding: 3px;
+}

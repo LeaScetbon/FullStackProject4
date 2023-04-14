@@ -1,10 +1,10 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import './App.css';
+import './button.css';
 import PropTypes from "prop-types";
-import Screen from "./screen";
-import  Keyboard  from "./keyboard";
 
+var screenContent = '';
 
 export class Button extends React.Component {
   static propTypes = {
@@ -19,29 +19,18 @@ export class Button extends React.Component {
   }
 
   handleClick = () => {
-    this.setState(prevState => ({ displayValue: prevState.displayValue + this.props.content }));
-    ReactDOM.render(this.state.displayValue,document.getElementById('Screen'));
-    //ReactDOM.render(this.props.content, document.getElementById('Screen'));
-    //Screen.setState({text: text+this.props.content});
-    //this.props.clickHandler();
-   
+    screenContent += this.props.content;
+    /*this.setState(prevState => ({ displayValue: prevState.displayValue + this.props.content }));*/
+    ReactDOM.render(/*this.props.content*/screenContent, document.getElementById('Screen'));
   };
- 
 
   render() {
     return (
       <div className="buttonClass">
-
-        <button style={{ border: 'solid 2px black ', width: '100px', height: '50px', margin: 'auto' }} onClick={this.handleClick}>{this.props.content}</button>
+        <button style={this.props.style} onClick={this.handleClick}>{this.props.content}</button>
       </div>
     );
   }
-
 }
 
-/*function button_func(letter){
-    let text=document.getElementById('screen').innerHTML;
-    text+=letter;
-    document.getElementById('screen').innerHTML=text;
-}*/
 export default Button;
