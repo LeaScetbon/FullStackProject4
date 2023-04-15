@@ -2,15 +2,11 @@ import React from "react";
 import ReactDOM from "react-dom";
 import './App.css';
 import './button.css';
-import PropTypes from "prop-types";
 
 var screenContent = '';
 
 export class Button extends React.Component {
-  static propTypes = {
-    content: PropTypes.string,
-    clickHandler: PropTypes.func,
-  };
+
   constructor(props) {
     super(props);
     this.state = {
@@ -22,8 +18,14 @@ export class Button extends React.Component {
     if (this.props.content === 'CLEAR' ){
       screenContent = '';
     }
-    else if (this.props.content ==  'DEL'){
+    else if (this.props.content ===  'DEL'){
       screenContent= screenContent.slice(0,-1);
+    }
+    else if (this.props.content ===  'Enter'){
+      screenContent+= '\n';
+    }
+    else if (this.props.content ===  'Space'){
+      screenContent+= ' ';
     }
     else{
     screenContent += this.props.content;
@@ -31,7 +33,6 @@ export class Button extends React.Component {
 
     /*this.setState(prevState => ({ displayValue: prevState.displayValue + this.props.content }));*/
     ReactDOM.render(/*this.props.content*/screenContent, document.getElementById('Screen'));
-   
   };
 
   render() {
