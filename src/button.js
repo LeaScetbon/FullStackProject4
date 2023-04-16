@@ -3,7 +3,7 @@ import ReactDOM from "react-dom";
 import './App.css';
 import './button.css';
 
-var screenContent = '';
+var screenContent = [];
 
 export class Button extends React.Component {
 
@@ -15,24 +15,24 @@ export class Button extends React.Component {
   }
 
   handleClick = () => {
-    if (this.props.content === 'CLEAR' ){
-      screenContent = '';
+    if (this.props.content === 'CLEAR') {
+      screenContent = [];
     }
-    else if (this.props.content ===  'DEL'){
-      screenContent= screenContent.slice(0,-1);
+    else if (this.props.content === 'DEL') {
+      screenContent = screenContent.slice(0, -1);
     }
-    else if (this.props.content ===  'Enter'){
-      screenContent+= '\n';
+    else if (this.props.content === 'Enter') {
+      screenContent.push('\n');
     }
-    else if (this.props.content ===  'Space'){
-      screenContent+= ' ';
+    else if (this.props.content === 'Space') {
+      screenContent.push(' ');
     }
-    else{
-    screenContent += this.props.content;
-  }
-
+    else {
+      screenContent.push(this.props.content);
+    }
+    var text = screenContent.map((letter) => (<span className="letterSpan">{letter}</span>));
     /*this.setState(prevState => ({ displayValue: prevState.displayValue + this.props.content }));*/
-    ReactDOM.render(/*this.props.content*/screenContent, document.getElementById('Screen'));
+    ReactDOM.render(/*this.props.content*/  text, document.getElementById('Screen'));
   };
 
   render() {

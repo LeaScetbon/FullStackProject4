@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
-
+import './buttonStyle.css';
 export class ButtonStyle extends React.Component {
 
     constructor(props) {
@@ -25,8 +25,8 @@ export class ButtonStyle extends React.Component {
 
     render() {
         return (
-            <div className="buttonStyleClass">
-                <button style={this.props.style} onClick={this.handleClickStyle}>{this.props.content}</button>
+            <div>
+                <button className="buttonStyleClass" style={this.props.style} onClick={this.handleClickStyle}>{this.props.content}</button>
             </div>
         );
     }
