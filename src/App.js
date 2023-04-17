@@ -7,13 +7,7 @@ import ButtonStyle from "./buttonStyle";
 import Color from './color';
 
 export class App extends React.Component {
-  /*state = {
-    screen: null
-  };
-  
-    handleClick = content => {
-      this.setState({ screen: content });
-    };*/
+
 
   render() {
     return (
@@ -45,7 +39,7 @@ export class App extends React.Component {
           <div style={{ width: '400px', display: "flex", margin: 'auto' }}>
             <Keyboard content="upLetters" />
             <Keyboard content="letters" />
-            <Keyboard content="hebrow" />
+            <Keyboard content="hebrew" />
             <Keyboard content="other" />
             <Keyboard content="Emojis" />
           </div>

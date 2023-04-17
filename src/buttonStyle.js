@@ -1,6 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import './buttonStyle.css';
+import Color from "./color";
 export class ButtonStyle extends React.Component {
 
     constructor(props) {
