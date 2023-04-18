@@ -2,11 +2,12 @@ import React from "react";
 import ReactDOM from "react-dom";
 import './buttonStyle.css';
 import Color from "./color";
+
+var count;
 export class ButtonStyle extends React.Component {
 
     constructor(props) {
         super(props);
-
     }
 
     handleClickStyle = () => {
