@@ -42,6 +42,7 @@ export class App extends React.Component {
             <Keyboard content="hebrew" />
             <Keyboard content="other" />
             <Keyboard content="Emojis" />
+            <Keyboard content="style" />
           </div>
           <div className="keyboardClass" id="keyboardClass" style={{ border: 'solid 2px black ', width: '400px', height: 'auto', margin: 'auto' }} />
         </div>

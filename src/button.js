@@ -3,18 +3,16 @@ import ReactDOM from "react-dom";
 import './App.css';
 import './button.css';
 
-var screenContent = [];
+var screenContent = <div></div>;
 
 export class Button extends React.Component {
 
   constructor(props) {
     super(props);
-    this.state = {
-      displayValue: ''
-    };
   }
 
   handleClick = () => {
+    let classes = "letterSpan";
     if (this.props.content === 'CLEAR') {
       screenContent = [];
     }
@@ -28,11 +26,21 @@ export class Button extends React.Component {
       screenContent.push(' ');
     }
     else {
-      screenContent.push(this.props.content);
+      screenContent.content=(<span className={classes}>{this.props.content}</span>);
     }
-    var text = screenContent.map((letter) => (<span className="letterSpan">{letter}</span>));
-    /*this.setState(prevState => ({ displayValue: prevState.displayValue + this.props.content }));*/
-    ReactDOM.render(/*this.props.content*/  text, document.getElementById('Screen'));
+    switch (this.props.content) {
+      case 'small':
+        classes += " small";
+        console.log("small");
+        break;
+        case 'medium':
+        classes += " medium";
+        break;
+      default:
+        break;
+    }
+    var text = screenContent.map((letter) => (<span className={letter.className}>{letter.content}</span>));
+    ReactDOM.render( screenContent, document.getElementById('Screen'));
   };
 
   render() {
