@@ -3,3 +3,46 @@
     padding: 3px;
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
 }
+
+.letterSpan{
+    font-size: 20px;
+}
+
+.small{
+    font-size: 15px;
+  }
+
+.medium{
+    font-size: 20px;
+}
+
+.large{
+    font-size: 30px;
+}
+.Arial{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.Verdana{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.Tahoma{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.red{
+    color: red;
+}
+
+.blue{
+    color: blue;
+}
+
+.green{
+    color: green;
+}
+
+.yellow{
+    color: yellow;
+}

@@ -3,7 +3,6 @@ import ReactDOM from "react-dom";
 import './buttonStyle.css';
 import Color from "./color";
 
-var count;
 export class ButtonStyle extends React.Component {
 
     constructor(props) {
@@ -19,11 +18,11 @@ export class ButtonStyle extends React.Component {
             document.getElementById('Screen').style.fontSize = '30px';
         else if (this.props.content === 'Arial')
             document.getElementById('Screen').style.fontFamily = "'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif";
-            else if (this.props.content === 'Verdana')
+        else if (this.props.content === 'Verdana')
             document.getElementById('Screen').style.fontFamily = "'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif";
-            else if (this.props.content === 'Tahoma')
+        else if (this.props.content === 'Tahoma')
             document.getElementById('Screen').style.fontFamily = "Verdana, Geneva, Tahoma, sans-serif";
-        };
+    };
 
     render() {
         return (
